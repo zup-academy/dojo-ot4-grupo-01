@@ -7,11 +7,14 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import br.com.zupedu.dojo.ot4dojo.turma.validador.UniqueValid;
+
 
 public class TurmaRequest {
 	
 	@NotBlank
 	@Length(max = 50)
+	@UniqueValid
 	private String nome;
 	
 	@NotNull
