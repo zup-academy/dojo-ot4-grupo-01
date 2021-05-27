@@ -29,7 +29,7 @@ public class TurmaRequest {
 	}
 	
 	public Turma toModel() {
-		return new Turma()
+		return new Turma(nome,iniciaEm,terminaEm);
 	}
 	
 	
