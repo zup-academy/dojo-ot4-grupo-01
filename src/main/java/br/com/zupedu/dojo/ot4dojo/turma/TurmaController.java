@@ -24,11 +24,6 @@ public class TurmaController {
 	@PersistenceContext
 	private EntityManager manager;
 	
-	@InitBinder
-	public void initilizer(WebDataBinder binder) {
-		binder.addValidators(null);
-	}
-	
 	@PostMapping
     public ResponseEntity<TurmaResponse> criaTurma(@RequestBody @Valid TurmaRequest request,
 									   UriComponentsBuilder builder) {
