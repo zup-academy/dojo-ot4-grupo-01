@@ -15,7 +15,7 @@ import javax.validation.Payload;
 @Target({FIELD})
 @Retention(RUNTIME)
 @Documented
-@Constraint(validatedBy = {UniqueValidValidator.class})
+@Constraint(validatedBy = {ValidaDataInicioValidator.class})
 public @interface ValidaDataInicio {
 
     String message() default "{javax.validation.constraints.turma.dojo-ot4}";

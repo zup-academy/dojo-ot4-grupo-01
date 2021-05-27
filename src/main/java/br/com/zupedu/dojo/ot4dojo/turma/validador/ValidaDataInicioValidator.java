@@ -5,21 +5,22 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+import java.time.LocalDate;
 
 /**
  *
  * @author Robso
  */
-public class ValidaDataInicioValidator implements ConstraintValidator<ValidaDataInicio, Turma> {
+public class ValidaDataInicioValidator implements ConstraintValidator<ValidaDataInicio, LocalDate> {
 
     @PersistenceContext
     private EntityManager manager;
 
     @Override
-    public boolean isValid(Turma turma, ConstraintValidatorContext cvc) {
+    public boolean isValid(LocalDate iniciaEm, ConstraintValidatorContext cvc) {
         Boolean valid = manager.createQuery("SELECT count(1) > 0 FROM Turma WHERE iniciaEm = :campo",
                 Boolean.class)
-                .setParameter("campo", turma.getIniciaEm())
+                .setParameter("campo", iniciaEm)
                 .getSingleResult();
 
         return !valid;

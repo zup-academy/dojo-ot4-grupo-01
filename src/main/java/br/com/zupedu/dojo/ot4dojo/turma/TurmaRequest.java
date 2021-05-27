@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import br.com.zupedu.dojo.ot4dojo.turma.validador.ValidaDataInicio;
 import org.hibernate.validator.constraints.Length;
 
 import br.com.zupedu.dojo.ot4dojo.turma.validador.UniqueValid;
@@ -18,6 +19,7 @@ public class TurmaRequest {
 	private String nome;
 	
 	@NotNull
+	@ValidaDataInicio
 	private LocalDate iniciaEm;
 	
 	@NotNull
